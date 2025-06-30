@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AboutPage</class>
+ <widget class="QWidget" name="AboutPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>683</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>关于</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #3c4b64;</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="titleLabel">
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: white;
+background-color: rgba(52, 73, 94, 120);
+border-radius: 10px;
+padding: 10px;</string>
+     </property>
+     <property name="text">
+      <string>关于碳足迹计算器</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="aboutFrame">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(52, 73, 94, 120);
+border-radius: 10px;
+padding: 10px;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="aboutLayout">
+      <item>
+       <widget class="QLabel" name="versionLabel">
+        <property name="styleSheet">
+         <string notr="true">color: white;
+background-color: transparent;
+font-weight: bold;</string>
+        </property>
+        <property name="text">
+         <string>版本: 1.0.0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="buildDateLabel">
+        <property name="styleSheet">
+         <string notr="true">color: white;
+background-color: transparent;</string>
+        </property>
+        <property name="text">
+         <string>构建日期: 2023-05-01</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="copyrightLabel">
+        <property name="styleSheet">
+         <string notr="true">color: white;
+background-color: transparent;</string>
+        </property>
+        <property name="text">
+         <string>版权所有 © 2023 碳足迹计算器团队</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTextEdit" name="aboutTextEdit">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>150</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QTextEdit {
+  background-color: #2c3e50;
+  border: 1px solid #34495e;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+}</string>
+        </property>
+        <property name="html">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'SimSun';&quot;&gt;碳足迹计算器是一款帮助用户计算和跟踪个人碳排放的工具。&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'SimSun';&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'SimSun';&quot;&gt;通过记录日常活动，如交通出行、能源使用、食物消费等，用户可以了解自己对环境的影响，并找到减少碳排放的方法。&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'SimSun';&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'SimSun';&quot;&gt;我们的目标是提高环保意识，促进可持续发展。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="topButtonLayout">
+        <item>
+         <widget class="QPushButton" name="visitWebsiteButton">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+  background-color: #2980b9;
+  color: white;
+  border-radius: 5px;
+}
+QPushButton:hover {
+  background-color: #3498db;
+}</string>
+          </property>
+          <property name="text">
+           <string>访问官网</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="viewSourceButton">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+  background-color: #8e44ad;
+  color: white;
+  border-radius: 5px;
+}
+QPushButton:hover {
+  background-color: #9b59b6;
+}</string>
+          </property>
+          <property name="text">
+           <string>查看源码</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="bottomButtonLayout">
+        <item>
+         <widget class="QPushButton" name="contactUsButton">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+  background-color: #16a085;
+  color: white;
+  border-radius: 5px;
+}
+QPushButton:hover {
+  background-color: #1abc9c;
+}</string>
+          </property>
+          <property name="text">
+           <string>联系我们</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="privacyPolicyButton">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+  background-color: #7f8c8d;
+  color: white;
+  border-radius: 5px;
+}
+QPushButton:hover {
+  background-color: #95a5a6;
+}</string>
+          </property>
+          <property name="text">
+           <string>隐私政策</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="dataGroup">
+        <property name="styleSheet">
+         <string notr="true">QGroupBox {
+  color: white;
+  border: 1px solid #2c3e50;
+  border-radius: 5px;
+  margin-top: 1ex;
+  font-weight: bold;
+}
+QGroupBox::title {
+  subcontrol-origin: margin;
+  subcontrol-position: top center;
+  padding: 0 5px;
+}</string>
+        </property>
+        <property name="title">
+         <string>数据管理</string>
+        </property>
+        <layout class="QHBoxLayout" name="dataLayout">
+         <item>
+          <widget class="QPushButton" name="clearHistoryButton">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+  background-color: #e74c3c;
+  color: white;
+  border-radius: 5px;
+}
+QPushButton:hover {
+  background-color: #c0392b;
+}</string>
+           </property>
+           <property name="text">
+            <string>清空历史记录</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="exportSettingsButton">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+  background-color: #2980b9;
+  color: white;
+  border-radius: 5px;
+}
+QPushButton:hover {
+  background-color: #3498db;
+}</string>
+           </property>
+           <property name="text">
+            <string>导出设置</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="importSettingsButton">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+  background-color: #27ae60;
+  color: white;
+  border-radius: 5px;
+}
+QPushButton:hover {
+  background-color: #2ecc71;
+}</string>
+           </property>
+           <property name="text">
+            <string>导入设置</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

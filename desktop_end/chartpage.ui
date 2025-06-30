@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ChartPage</class>
+ <widget class="QWidget" name="ChartPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>900</width>
+    <height>650</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>数据图表</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #3c4b64;</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>12</number>
+   </property>
+   <property name="leftMargin">
+    <number>15</number>
+   </property>
+   <property name="topMargin">
+    <number>15</number>
+   </property>
+   <property name="rightMargin">
+    <number>15</number>
+   </property>
+   <property name="bottomMargin">
+    <number>15</number>
+   </property>
+   <item>
+    <widget class="QLabel" name="titleLabel">
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: white;
+background-color: rgba(52, 73, 94, 150);
+border-radius: 8px;
+padding: 10px;</string>
+     </property>
+     <property name="text">
+      <string>用户数据统计</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="userInfoLabel">
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: white;
+background-color: rgba(52, 73, 94, 100);
+border-radius: 8px;
+padding: 8px;</string>
+     </property>
+     <property name="text">
+      <string>当前用户：未登录</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="styleSheet">
+      <string notr="true">QScrollArea {
+    background-color: rgba(52, 73, 94, 150);
+    border-radius: 10px;
+    border: none;
+}
+
+QScrollBar:vertical {
+    background-color: rgba(52, 73, 94, 80);
+    width: 12px;
+    margin: 0px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical {
+    background-color: rgba(41, 128, 185, 150);
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background-color: rgba(41, 128, 185, 200);
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background-color: rgba(52, 73, 94, 50);
+    border-radius: 6px;
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAsNeeded</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>870</width>
+        <height>566</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <property name="spacing">
+        <number>15</number>
+       </property>
+       <property name="leftMargin">
+        <number>15</number>
+       </property>
+       <property name="topMargin">
+        <number>15</number>
+       </property>
+       <property name="rightMargin">
+        <number>15</number>
+       </property>
+       <property name="bottomMargin">
+        <number>15</number>
+       </property>
+       <item>
+        <widget class="QFrame" name="chartsContainer">
+         <property name="styleSheet">
+          <string notr="true">QFrame {
+    background-color: rgba(52, 73, 94, 150);
+    border-radius: 10px;
+}</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <property name="spacing">
+           <number>15</number>
+          </property>
+          <property name="leftMargin">
+           <number>15</number>
+          </property>
+          <property name="topMargin">
+           <number>15</number>
+          </property>
+          <property name="rightMargin">
+           <number>15</number>
+          </property>
+          <property name="bottomMargin">
+           <number>15</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="noDataLabel">
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: white;
+background-color: rgba(52, 73, 94, 100);
+border-radius: 10px;
+padding: 30px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QGridLayout" name="chartsLayout">
+            <property name="spacing">
+             <number>15</number>
+            </property>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

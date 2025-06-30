@@ -1,0 +1,13 @@
+[Unit]
+Description=Carbon Calculator Flask API
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/opt/carbon_calculator
+ExecStart=/opt/carbon_calculator/venv/bin/gunicorn -c gunicorn_config.py app:app
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target 

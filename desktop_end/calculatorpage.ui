@@ -1,0 +1,2440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CalculatorPage</class>
+ <widget class="QWidget" name="CalculatorPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>794</width>
+    <height>697</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #3c4b64;</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="5" column="0">
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="styleSheet">
+      <string notr="true">QScrollArea {
+    background-color: transparent;
+    border: none;
+}
+QScrollArea &gt; QWidget &gt; QWidget {
+    background-color: transparent;
+}
+QScrollBar:vertical {
+    background: #2c3e50;
+    width: 10px;
+    margin: 0px;
+}
+QScrollBar::handle:vertical {
+    background: #34495e;
+    min-height: 20px;
+    border-radius: 5px;
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0px;
+}</string>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>782</width>
+        <height>57</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="spacing">
+        <number>20</number>
+       </property>
+       <property name="leftMargin">
+        <number>10</number>
+       </property>
+       <property name="topMargin">
+        <number>10</number>
+       </property>
+       <property name="rightMargin">
+        <number>10</number>
+       </property>
+       <property name="bottomMargin">
+        <number>10</number>
+       </property>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout_8"/>
+   </item>
+   <item row="7" column="0">
+    <widget class="QFrame" name="summaryFrame">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>80</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(52, 73, 94, 150);
+border-radius: 10px;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_10">
+      <item>
+       <widget class="QFrame" name="totalFrame">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(39, 174, 96, 100);
+border-radius: 8px;</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QLabel" name="totalLabel">
+           <property name="styleSheet">
+            <string notr="true">color: white;
+background-color: transparent;
+font-size: 12px;</string>
+           </property>
+           <property name="text">
+            <string>您一年排放的CO2</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="totalCarbonLabel">
+           <property name="styleSheet">
+            <string notr="true">color: white;
+background-color: transparent;
+font-size: 16px;
+font-weight: bold;</string>
+           </property>
+           <property name="text">
+            <string>0.00 (吨)</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="perCapitaFrame">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(41, 128, 185, 100);
+border-radius: 8px;</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <widget class="QLabel" name="perCapitaTextLabel">
+           <property name="styleSheet">
+            <string notr="true">color: white;
+background-color: transparent;
+font-size: 12px;</string>
+           </property>
+           <property name="text">
+            <string>全球人均每年排放CO₂ 4.5吨</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="perCapitaCarbonLabel">
+           <property name="styleSheet">
+            <string notr="true">color: white;
+background-color: transparent;
+font-size: 16px;
+font-weight: bold;</string>
+           </property>
+           <property name="text">
+            <string>您已远超人均碳排放量</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="rankFrame">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(155, 89, 182, 100);
+border-radius: 8px;</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <widget class="QLabel" name="rankTextLabel">
+           <property name="styleSheet">
+            <string notr="true">color: white;
+background-color: transparent;
+font-size: 12px;</string>
+           </property>
+           <property name="text">
+            <string>您1年排放的CO₂需要</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="carbonRankLabel">
+           <property name="styleSheet">
+            <string notr="true">color: white;
+background-color: transparent;
+font-size: 16px;
+font-weight: bold;</string>
+           </property>
+           <property name="text">
+            <string>0 棵树用10年来抵偿</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <layout class="QHBoxLayout" name="buttonLayout">
+     <item>
+      <spacer name="horizontalSpacer_5">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="calculateButton">
+       <property name="minimumSize">
+        <size>
+         <width>200</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #27ae60;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+QPushButton:hover {
+    background-color: #2ecc71;
+}
+QPushButton:pressed {
+    background-color: #219653;
+}</string>
+       </property>
+       <property name="text">
+        <string>计算碳足迹</string>
+       </property>
+       <property name="icon">
+        <iconset resource="resource.qrc">
+         <normaloff>:/resource/calculate.png</normaloff>:/resource/calculate.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="saveResultButton">
+       <property name="minimumSize">
+        <size>
+         <width>200</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #2980b9;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+QPushButton:hover {
+    background-color: #3498db;
+}
+QPushButton:pressed {
+    background-color: #1a5276;
+}</string>
+       </property>
+       <property name="text">
+        <string>保存结果</string>
+       </property>
+       <property name="icon">
+        <iconset resource="resource.qrc">
+         <normaloff>:/resource/electricity_bluegreen.png</normaloff>:/resource/electricity_bluegreen.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_6">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item row="4" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout_6">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QFrame" name="clothesFrame">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(40, 40, 40, 180);</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_7">
+        <item>
+         <widget class="QLabel" name="disposableChopstickIconLabel">
+          <property name="minimumSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgba(211, 84, 0, 150);
+border-radius: 20px;
+padding: 5px;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="resource.qrc">:/resource/disposableChopstick.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="disposableChopstickTextLabel">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>120</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: transparent;
+color: white;
+font-size: 14px;</string>
+          </property>
+          <property name="text">
+           <string>一次性筷子</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QSlider" name="disposableChopstickSlider">
+          <property name="styleSheet">
+           <string notr="true">QSlider {
+    margin: 6px 0;
+	background:transparent；
+}
+
+QSlider::groove:horizontal {
+    border: 1px solid #555555;          /* 轨道边框 */
+    height: 5px;                        /* 轨道高度 */
+    background: #222222;                /* 轨道背景色 */
+    margin: 2px 0;                      /* 上下边距 */
+    border-radius: 4px;                 /* 轨道圆角 */
+}
+
+QSlider::handle:horizontal {
+    background: #ffffff;                /* 滑块背景色-白色 */
+    border: 1px solid #cccccc;          /* 滑块边框 */
+    width: 10px;                        /* 滑块宽度 */
+    height: 10px;                       /* 滑块高度 */
+    margin: -6px 0;                     /* 滑块超出轨道的部分 */
+    border-radius: 5px;                 /* 滑块圆角（半径为宽度的一半，实现圆形） */
+}
+
+QSlider::add-page:horizontal {
+    background: #222222;                /* 滑块右侧轨道颜色 */
+    border-radius: 4px;                 /* 右侧轨道圆角 */
+}
+
+QSlider::sub-page:horizontal {
+    background: rgb(222, 222, 222);                /* 滑块左侧轨道颜色 */
+    border-radius: 4px;                 /* 左侧轨道圆角 */
+}</string>
+          </property>
+          <property name="maximum">
+           <number>1000</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="disposableChopstickValueEdit">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>60</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgba(60, 60, 60, 200);
+color: white;
+font-size: 14px;
+border: 1px solid rgba(80, 80, 80, 200);
+border-radius: 4px;
+padding: 2px 5px;</string>
+          </property>
+          <property name="text">
+           <string>0.00</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="disposableChopstickUnitLabel">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: transparent;
+color: white;
+font-size: 14px;</string>
+          </property>
+          <property name="text">
+           <string>双/周</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="homeEnergyFrame">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(40, 40, 40, 180);</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="plasticBagIconLabel">
+          <property name="minimumSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgba(44, 62, 80, 150);
+border-radius: 20px;
+padding: 5px;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="resource.qrc">:/resource/plasticBag.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="plasticBagTextLabel">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>120</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: transparent;
+color: white;
+font-size: 14px;</string>
+          </property>
+          <property name="text">
+           <string>塑料袋</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QSlider" name="plasticBagSlider">
+          <property name="styleSheet">
+           <string notr="true">QSlider {
+    margin: 6px 0;
+	background:transparent；
+}
+
+QSlider::groove:horizontal {
+    border: 1px solid #555555;          /* 轨道边框 */
+    height: 5px;                        /* 轨道高度 */
+    background: #222222;                /* 轨道背景色 */
+    margin: 2px 0;                      /* 上下边距 */
+    border-radius: 4px;                 /* 轨道圆角 */
+}
+
+QSlider::handle:horizontal {
+    background: #ffffff;                /* 滑块背景色-白色 */
+    border: 1px solid #cccccc;          /* 滑块边框 */
+    width: 10px;                        /* 滑块宽度 */
+    height: 10px;                       /* 滑块高度 */
+    margin: -6px 0;                     /* 滑块超出轨道的部分 */
+    border-radius: 5px;                 /* 滑块圆角（半径为宽度的一半，实现圆形） */
+}
+
+QSlider::add-page:horizontal {
+    background: #222222;                /* 滑块右侧轨道颜色 */
+    border-radius: 4px;                 /* 右侧轨道圆角 */
+}
+
+QSlider::sub-page:horizontal {
+    background: rgb(222, 222, 222);                /* 滑块左侧轨道颜色 */
+    border-radius: 4px;                 /* 左侧轨道圆角 */
+}</string>
+          </property>
+          <property name="maximum">
+           <number>1000</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="plasticBagValueEdit">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>60</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgba(60, 60, 60, 200);
+color: white;
+font-size: 14px;
+border: 1px solid rgba(80, 80, 80, 200);
+border-radius: 4px;
+padding: 2px 5px;</string>
+          </property>
+          <property name="text">
+           <string>0.00</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="plasticBagUnitLabel">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: transparent;
+color: white;
+font-size: 14px;</string>
+          </property>
+          <property name="text">
+           <string>个/周</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="consumptionFrame">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(40, 40, 40, 180);</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_8">
+        <item>
+         <widget class="QLabel" name="clothesIconLabel">
+          <property name="minimumSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgba(142, 68, 173, 150);
+border-radius: 20px;
+padding: 5px;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="resource.qrc">:/resource/clothes.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="clothesTextLabel">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>120</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: transparent;
+color: white;
+font-size: 14px;</string>
+          </property>
+          <property name="text">
+           <string>新置衣物</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QSlider" name="clothesSlider">
+          <property name="styleSheet">
+           <string notr="true">QSlider {
+    margin: 6px 0;
+	background:transparent；
+}
+
+QSlider::groove:horizontal {
+    border: 1px solid #555555;          /* 轨道边框 */
+    height: 5px;                        /* 轨道高度 */
+    background: #222222;                /* 轨道背景色 */
+    margin: 2px 0;                      /* 上下边距 */
+    border-radius: 4px;                 /* 轨道圆角 */
+}
+
+QSlider::handle:horizontal {
+    background: #ffffff;                /* 滑块背景色-白色 */
+    border: 1px solid #cccccc;          /* 滑块边框 */
+    width: 10px;                        /* 滑块宽度 */
+    height: 10px;                       /* 滑块高度 */
+    margin: -6px 0;                     /* 滑块超出轨道的部分 */
+    border-radius: 5px;                 /* 滑块圆角（半径为宽度的一半，实现圆形） */
+}
+
+QSlider::add-page:horizontal {
+    background: #222222;                /* 滑块右侧轨道颜色 */
+    border-radius: 4px;                 /* 右侧轨道圆角 */
+}
+
+QSlider::sub-page:horizontal {
+    background: rgb(222, 222, 222);                /* 滑块左侧轨道颜色 */
+    border-radius: 4px;                 /* 左侧轨道圆角 */
+}</string>
+          </property>
+          <property name="maximum">
+           <number>1000</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="consumptionValueEdit">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>60</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgba(60, 60, 60, 200);
+color: white;
+font-size: 14px;
+border: 1px solid rgba(80, 80, 80, 200);
+border-radius: 4px;
+padding: 2px 5px;</string>
+          </property>
+          <property name="text">
+           <string>0.00</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="consumptionUnitLabel">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: transparent;
+color: white;
+font-size: 14px;</string>
+          </property>
+          <property name="text">
+           <string>件/年</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="paperFrame">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(40, 40, 40, 180);</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <widget class="QLabel" name="paperIconLabel">
+          <property name="minimumSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgba(22, 160, 133, 150);
+border-radius: 20px;
+padding: 5px;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="resource.qrc">:/resource/paper.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="paperTextLabel">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>120</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: transparent;
+color: white;
+font-size: 14px;</string>
+          </property>
+          <property name="text">
+           <string>纸张</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QSlider" name="paperSlider">
+          <property name="styleSheet">
+           <string notr="true">QSlider {
+    margin: 6px 0;
+	background:transparent；
+}
+
+QSlider::groove:horizontal {
+    border: 1px solid #555555;          /* 轨道边框 */
+    height: 5px;                        /* 轨道高度 */
+    background: #222222;                /* 轨道背景色 */
+    margin: 2px 0;                      /* 上下边距 */
+    border-radius: 4px;                 /* 轨道圆角 */
+}
+
+QSlider::handle:horizontal {
+    background: #ffffff;                /* 滑块背景色-白色 */
+    border: 1px solid #cccccc;          /* 滑块边框 */
+    width: 10px;                        /* 滑块宽度 */
+    height: 10px;                       /* 滑块高度 */
+    margin: -6px 0;                     /* 滑块超出轨道的部分 */
+    border-radius: 5px;                 /* 滑块圆角（半径为宽度的一半，实现圆形） */
+}
+
+QSlider::add-page:horizontal {
+    background: #222222;                /* 滑块右侧轨道颜色 */
+    border-radius: 4px;                 /* 右侧轨道圆角 */
+}
+
+QSlider::sub-page:horizontal {
+    background: rgb(222, 222, 222);                /* 滑块左侧轨道颜色 */
+    border-radius: 4px;                 /* 左侧轨道圆角 */
+}</string>
+          </property>
+          <property name="maximum">
+           <number>1000</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="paperValueEdit">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>60</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgba(60, 60, 60, 200);
+color: white;
+font-size: 14px;
+border: 1px solid rgba(80, 80, 80, 200);
+border-radius: 4px;
+padding: 2px 5px;</string>
+          </property>
+          <property name="text">
+           <string>0.00</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="paperUnitLabel">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: transparent;
+color: white;
+font-size: 14px;</string>
+          </property>
+          <property name="text">
+           <string>张/周</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="separator2">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>2</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(236, 236, 236);
+border-radius: 1px;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout_11">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_7">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>10</number>
+       </property>
+       <item>
+        <widget class="QFrame" name="airplaneFrame">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgba(40, 40, 40, 180);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <property name="leftMargin">
+           <number>10</number>
+          </property>
+          <property name="topMargin">
+           <number>5</number>
+          </property>
+          <property name="rightMargin">
+           <number>10</number>
+          </property>
+          <property name="bottomMargin">
+           <number>5</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="airplaneIconLabel">
+            <property name="minimumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(41, 128, 185, 150);
+border-radius: 20px;
+padding: 5px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="resource.qrc">:/resource/airplane.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="airplaneTextLabel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: transparent;
+color: white;
+font-size: 14px;</string>
+            </property>
+            <property name="text">
+             <string>飞机</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSlider" name="airplaneSlider">
+            <property name="styleSheet">
+             <string notr="true">QSlider {
+    margin: 6px 0;
+	background:transparent；
+}
+
+QSlider::groove:horizontal {
+    border: 1px solid #555555;          /* 轨道边框 */
+    height: 5px;                        /* 轨道高度 */
+    background: #222222;                /* 轨道背景色 */
+    margin: 2px 0;                      /* 上下边距 */
+    border-radius: 4px;                 /* 轨道圆角 */
+}
+
+QSlider::handle:horizontal {
+    background: #ffffff;                /* 滑块背景色-白色 */
+    border: 1px solid #cccccc;          /* 滑块边框 */
+    width: 10px;                        /* 滑块宽度 */
+    height: 10px;                       /* 滑块高度 */
+    margin: -6px 0;                     /* 滑块超出轨道的部分 */
+    border-radius: 5px;                 /* 滑块圆角（半径为宽度的一半，实现圆形） */
+}
+
+QSlider::add-page:horizontal {
+    background: #222222;                /* 滑块右侧轨道颜色 */
+    border-radius: 4px;                 /* 右侧轨道圆角 */
+}
+
+QSlider::sub-page:horizontal {
+    background: rgb(222, 222, 222);                /* 滑块左侧轨道颜色 */
+    border-radius: 4px;                 /* 左侧轨道圆角 */
+}</string>
+            </property>
+            <property name="maximum">
+             <number>1000</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="airplaneValueEdit">
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>60</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(60, 60, 60, 200);
+color: white;
+font-size: 14px;
+border: 1px solid rgba(80, 80, 80, 200);
+border-radius: 4px;
+padding: 2px 5px;</string>
+            </property>
+            <property name="text">
+             <string>0.00</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="airplaneUnitLabel">
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: transparent;
+color: white;
+font-size: 14px;</string>
+            </property>
+            <property name="text">
+             <string>千米/年</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="trainFrame">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgba(40, 40, 40, 180);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <property name="leftMargin">
+           <number>10</number>
+          </property>
+          <property name="topMargin">
+           <number>5</number>
+          </property>
+          <property name="rightMargin">
+           <number>10</number>
+          </property>
+          <property name="bottomMargin">
+           <number>5</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="trainIconLabel">
+            <property name="minimumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(52, 152, 219, 150);
+border-radius: 20px;
+padding: 5px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="resource.qrc">:/resource/train.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="trainTextLabel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: transparent;
+color: white;
+font-size: 14px;</string>
+            </property>
+            <property name="text">
+             <string>火车</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSlider" name="trainSlider">
+            <property name="styleSheet">
+             <string notr="true">QSlider {
+    margin: 6px 0;
+	background:transparent；
+}
+
+QSlider::groove:horizontal {
+    border: 1px solid #555555;          /* 轨道边框 */
+    height: 5px;                        /* 轨道高度 */
+    background: #222222;                /* 轨道背景色 */
+    margin: 2px 0;                      /* 上下边距 */
+    border-radius: 4px;                 /* 轨道圆角 */
+}
+
+QSlider::handle:horizontal {
+    background: #ffffff;                /* 滑块背景色-白色 */
+    border: 1px solid #cccccc;          /* 滑块边框 */
+    width: 10px;                        /* 滑块宽度 */
+    height: 10px;                       /* 滑块高度 */
+    margin: -6px 0;                     /* 滑块超出轨道的部分 */
+    border-radius: 5px;                 /* 滑块圆角（半径为宽度的一半，实现圆形） */
+}
+
+QSlider::add-page:horizontal {
+    background: #222222;                /* 滑块右侧轨道颜色 */
+    border-radius: 4px;                 /* 右侧轨道圆角 */
+}
+
+QSlider::sub-page:horizontal {
+    background: rgb(222, 222, 222);                /* 滑块左侧轨道颜色 */
+    border-radius: 4px;                 /* 左侧轨道圆角 */
+}</string>
+            </property>
+            <property name="maximum">
+             <number>1000</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="trainValueEdit">
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>60</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(60, 60, 60, 200);
+color: white;
+font-size: 14px;
+border: 1px solid rgba(80, 80, 80, 200);
+border-radius: 4px;
+padding: 2px 5px;</string>
+            </property>
+            <property name="text">
+             <string>0.00</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="trainUnitLabel">
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: transparent;
+color: white;
+font-size: 14px;</string>
+            </property>
+            <property name="text">
+             <string>千米/年</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="busFrame">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgba(40, 40, 40, 180);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_9">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <property name="leftMargin">
+           <number>10</number>
+          </property>
+          <property name="topMargin">
+           <number>5</number>
+          </property>
+          <property name="rightMargin">
+           <number>10</number>
+          </property>
+          <property name="bottomMargin">
+           <number>5</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="busIconLabel">
+            <property name="minimumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(46, 204, 113, 150);
+border-radius: 20px;
+padding: 5px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="resource.qrc">:/resource/bus.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="busTextLabel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: transparent;
+color: white;
+font-size: 14px;</string>
+            </property>
+            <property name="text">
+             <string>公交车</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSlider" name="busSlider">
+            <property name="styleSheet">
+             <string notr="true">QSlider {
+    margin: 6px 0;
+	background:transparent；
+}
+
+QSlider::groove:horizontal {
+    border: 1px solid #555555;          /* 轨道边框 */
+    height: 5px;                        /* 轨道高度 */
+    background: #222222;                /* 轨道背景色 */
+    margin: 2px 0;                      /* 上下边距 */
+    border-radius: 4px;                 /* 轨道圆角 */
+}
+
+QSlider::handle:horizontal {
+    background: #ffffff;                /* 滑块背景色-白色 */
+    border: 1px solid #cccccc;          /* 滑块边框 */
+    width: 10px;                        /* 滑块宽度 */
+    height: 10px;                       /* 滑块高度 */
+    margin: -6px 0;                     /* 滑块超出轨道的部分 */
+    border-radius: 5px;                 /* 滑块圆角（半径为宽度的一半，实现圆形） */
+}
+
+QSlider::add-page:horizontal {
+    background: #222222;                /* 滑块右侧轨道颜色 */
+    border-radius: 4px;                 /* 右侧轨道圆角 */
+}
+
+QSlider::sub-page:horizontal {
+    background: rgb(222, 222, 222);                /* 滑块左侧轨道颜色 */
+    border-radius: 4px;                 /* 左侧轨道圆角 */
+}</string>
+            </property>
+            <property name="maximum">
+             <number>1000</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="busValueEdit">
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>60</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(60, 60, 60, 200);
+color: white;
+font-size: 14px;
+border: 1px solid rgba(80, 80, 80, 200);
+border-radius: 4px;
+padding: 2px 5px;</string>
+            </property>
+            <property name="text">
+             <string>0.00</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="busUnitLabel">
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: transparent;
+color: white;
+font-size: 14px;</string>
+            </property>
+            <property name="text">
+             <string>千米/天</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="carFrame">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgba(40, 40, 40, 180);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_13">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <property name="leftMargin">
+           <number>10</number>
+          </property>
+          <property name="topMargin">
+           <number>5</number>
+          </property>
+          <property name="rightMargin">
+           <number>10</number>
+          </property>
+          <property name="bottomMargin">
+           <number>5</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="carIconLabel">
+            <property name="minimumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(230, 126, 34, 150);
+border-radius: 20px;
+padding: 5px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="resource.qrc">:/resource/car.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="carTextLabel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: transparent;
+color: white;
+font-size: 14px;</string>
+            </property>
+            <property name="text">
+             <string>私家车</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSlider" name="carSlider">
+            <property name="styleSheet">
+             <string notr="true">QSlider {
+    margin: 6px 0;
+	background:transparent；
+}
+
+QSlider::groove:horizontal {
+    border: 1px solid #555555;          /* 轨道边框 */
+    height: 5px;                        /* 轨道高度 */
+    background: #222222;                /* 轨道背景色 */
+    margin: 2px 0;                      /* 上下边距 */
+    border-radius: 4px;                 /* 轨道圆角 */
+}
+
+QSlider::handle:horizontal {
+    background: #ffffff;                /* 滑块背景色-白色 */
+    border: 1px solid #cccccc;          /* 滑块边框 */
+    width: 10px;                        /* 滑块宽度 */
+    height: 10px;                       /* 滑块高度 */
+    margin: -6px 0;                     /* 滑块超出轨道的部分 */
+    border-radius: 5px;                 /* 滑块圆角（半径为宽度的一半，实现圆形） */
+}
+
+QSlider::add-page:horizontal {
+    background: #222222;                /* 滑块右侧轨道颜色 */
+    border-radius: 4px;                 /* 右侧轨道圆角 */
+}
+
+QSlider::sub-page:horizontal {
+    background: rgb(222, 222, 222);                /* 滑块左侧轨道颜色 */
+    border-radius: 4px;                 /* 左侧轨道圆角 */
+}</string>
+            </property>
+            <property name="maximum">
+             <number>1000</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="carValueEdit">
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>60</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(60, 60, 60, 200);
+color: white;
+font-size: 14px;
+border: 1px solid rgba(80, 80, 80, 200);
+border-radius: 4px;
+padding: 2px 5px;</string>
+            </property>
+            <property name="text">
+             <string>0.00</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="carUnitLabel">
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: transparent;
+color: white;
+font-size: 14px;</string>
+            </property>
+            <property name="text">
+             <string>千米/天</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QLabel" name="separator1">
+       <property name="maximumSize">
+        <size>
+         <width>2</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(236, 236, 236);
+border-radius: 1px;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QFrame" name="familyMemberFrame">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgba(40, 40, 40, 180);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_12">
+          <item>
+           <widget class="QLabel" name="familyMemberIconLabel">
+            <property name="minimumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(155, 89, 182, 150);
+border-radius: 20px;
+padding: 5px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="resource.qrc">:/resource/famliyMember.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="familyMemberTextLabel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>120</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: transparent;
+color: white;
+font-size: 14px;</string>
+            </property>
+            <property name="text">
+             <string>家庭成员</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSlider" name="familyMemberSlider">
+            <property name="styleSheet">
+             <string notr="true">QSlider {
+    margin: 6px 0;
+	background:transparent；
+}
+
+QSlider::groove:horizontal {
+    border: 1px solid #555555;          /* 轨道边框 */
+    height: 5px;                        /* 轨道高度 */
+    background: #222222;                /* 轨道背景色 */
+    margin: 2px 0;                      /* 上下边距 */
+    border-radius: 4px;                 /* 轨道圆角 */
+}
+
+QSlider::handle:horizontal {
+    background: #ffffff;                /* 滑块背景色-白色 */
+    border: 1px solid #cccccc;          /* 滑块边框 */
+    width: 10px;                        /* 滑块宽度 */
+    height: 10px;                       /* 滑块高度 */
+    margin: -6px 0;                     /* 滑块超出轨道的部分 */
+    border-radius: 5px;                 /* 滑块圆角（半径为宽度的一半，实现圆形） */
+}
+
+QSlider::add-page:horizontal {
+    background: #222222;                /* 滑块右侧轨道颜色 */
+    border-radius: 4px;                 /* 右侧轨道圆角 */
+}
+
+QSlider::sub-page:horizontal {
+    background: rgb(222, 222, 222);                /* 滑块左侧轨道颜色 */
+    border-radius: 4px;                 /* 左侧轨道圆角 */
+}</string>
+            </property>
+            <property name="maximum">
+             <number>1000</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="familyMemberValueEdit">
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>60</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(60, 60, 60, 200);
+color: white;
+font-size: 14px;
+border: 1px solid rgba(80, 80, 80, 200);
+border-radius: 4px;
+padding: 2px 5px;</string>
+            </property>
+            <property name="text">
+             <string>0.00</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="familyMemberUnitLabel">
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: transparent;
+color: white;
+font-size: 14px;</string>
+            </property>
+            <property name="text">
+             <string>人/家</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="publicServiceFrame">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgba(40, 40, 40, 180);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QLabel" name="livingAreaIconLabel">
+            <property name="minimumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(26, 188, 156, 150);
+border-radius: 20px;
+padding: 5px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="resource.qrc">:/resource/livingArea.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="livingAreaTextLabel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>120</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: transparent;
+color: white;
+font-size: 14px;</string>
+            </property>
+            <property name="text">
+             <string>居住地面积</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSlider" name="livingAreaSlider">
+            <property name="styleSheet">
+             <string notr="true">QSlider {
+    margin: 6px 0;
+	background:transparent；
+}
+
+QSlider::groove:horizontal {
+    border: 1px solid #555555;          /* 轨道边框 */
+    height: 5px;                        /* 轨道高度 */
+    background: #222222;                /* 轨道背景色 */
+    margin: 2px 0;                      /* 上下边距 */
+    border-radius: 4px;                 /* 轨道圆角 */
+}
+
+QSlider::handle:horizontal {
+    background: #ffffff;                /* 滑块背景色-白色 */
+    border: 1px solid #cccccc;          /* 滑块边框 */
+    width: 10px;                        /* 滑块宽度 */
+    height: 10px;                       /* 滑块高度 */
+    margin: -6px 0;                     /* 滑块超出轨道的部分 */
+    border-radius: 5px;                 /* 滑块圆角（半径为宽度的一半，实现圆形） */
+}
+
+QSlider::add-page:horizontal {
+    background: #222222;                /* 滑块右侧轨道颜色 */
+    border-radius: 4px;                 /* 右侧轨道圆角 */
+}
+
+QSlider::sub-page:horizontal {
+    background: rgb(222, 222, 222);                /* 滑块左侧轨道颜色 */
+    border-radius: 4px;                 /* 左侧轨道圆角 */
+}</string>
+            </property>
+            <property name="maximum">
+             <number>1000</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="livingAreaValueEdit">
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>60</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(60, 60, 60, 200);
+color: white;
+font-size: 14px;
+border: 1px solid rgba(80, 80, 80, 200);
+border-radius: 4px;
+padding: 2px 5px;</string>
+            </property>
+            <property name="text">
+             <string>0.00</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="livingAreaUnitLabel">
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: transparent;
+color: white;
+font-size: 14px;</string>
+            </property>
+            <property name="text">
+             <string>平方米</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="waterFrame">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgba(40, 40, 40, 180);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QLabel" name="electricityIconLabel">
+            <property name="minimumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(241, 196, 15, 150);
+border-radius: 20px;
+padding: 5px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="resource.qrc">:/resource/electricity_bluegreen.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="electricityTextLabel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>120</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: transparent;
+color: white;
+font-size: 14px;</string>
+            </property>
+            <property name="text">
+             <string>用电度数</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSlider" name="electricitySlider">
+            <property name="styleSheet">
+             <string notr="true">QSlider {
+    margin: 6px 0;
+	background:transparent；
+}
+
+QSlider::groove:horizontal {
+    border: 1px solid #555555;          /* 轨道边框 */
+    height: 5px;                        /* 轨道高度 */
+    background: #222222;                /* 轨道背景色 */
+    margin: 2px 0;                      /* 上下边距 */
+    border-radius: 4px;                 /* 轨道圆角 */
+}
+
+QSlider::handle:horizontal {
+    background: #ffffff;                /* 滑块背景色-白色 */
+    border: 1px solid #cccccc;          /* 滑块边框 */
+    width: 10px;                        /* 滑块宽度 */
+    height: 10px;                       /* 滑块高度 */
+    margin: -6px 0;                     /* 滑块超出轨道的部分 */
+    border-radius: 5px;                 /* 滑块圆角（半径为宽度的一半，实现圆形） */
+}
+
+QSlider::add-page:horizontal {
+    background: #222222;                /* 滑块右侧轨道颜色 */
+    border-radius: 4px;                 /* 右侧轨道圆角 */
+}
+
+QSlider::sub-page:horizontal {
+    background: rgb(222, 222, 222);                /* 滑块左侧轨道颜色 */
+    border-radius: 4px;                 /* 左侧轨道圆角 */
+}</string>
+            </property>
+            <property name="maximum">
+             <number>1000</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="electricityValueEdit">
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>60</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(60, 60, 60, 200);
+color: white;
+font-size: 14px;
+border: 1px solid rgba(80, 80, 80, 200);
+border-radius: 4px;
+padding: 2px 5px;</string>
+            </property>
+            <property name="text">
+             <string>0.00</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="electricityUnitLabel">
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: transparent;
+color: white;
+font-size: 14px;</string>
+            </property>
+            <property name="text">
+             <string>度/月</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="titleLabel">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Segoe UI</family>
+       <pointsize>16</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: white;
+background-color: rgba(45, 45, 45, 180);
+border-radius: 12px;
+padding: 8px 15px;
+letter-spacing: 2px;
+font-weight: bold;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 60);
+backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);</string>
+     </property>
+     <property name="text">
+      <string>碳  足  迹  计  算</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

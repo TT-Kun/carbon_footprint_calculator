@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    container_name: flask_carbon_calculator
+    restart: always
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    command: >
+      bash -c "python init_db.py && gunicorn --bind 0.0.0.0:5000 app:app --workers 4" 

@@ -1,0 +1,32 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resource/car.png</file>
+        <file>resource/electricity_black.png</file>
+        <file>resource/electricity_bluegreen.png</file>
+        <file>resource/paper.png</file>
+        <file>resource/clothes.png</file>
+        <file>resource/disposableChopstick.png</file>
+        <file>resource/famliyMember.png</file>
+        <file>resource/livingArea.png</file>
+        <file>resource/bus.png</file>
+        <file>resource/train.png</file>
+        <file>resource/airplane.png</file>
+        <file>resource/plasticBag.png</file>
+        <file>resource/calculate.png</file>
+        <file>resource/bg1.jpg</file>
+        <file>resource/bkg1.jpg</file>
+        <file>resource/bkg2.jpg</file>
+        <file>resource/bkg3.png</file>
+        <file>resource/slideshow1.png</file>
+        <file>resource/slideshow2.png</file>
+        <file>resource/slideshow3.png</file>
+        <file>resource/slideshow4.png</file>
+        <file>resource/homepage_white.png</file>
+        <file>resource/calculator_white.png</file>
+        <file>resource/statistics_white.png</file>
+        <file>resource/setting_white.png</file>
+        <file>resource/user_white.png</file>
+        <file>resource/logo.png</file>
+        <file>resource/data.png</file>
+    </qresource>
+</RCC>

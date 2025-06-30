@@ -1,0 +1,12 @@
+.git
+.venv
+__pycache__
+*.log
+*.pyc
+.idea
+deploy.sh
+deploy_windows.ps1
+docker_deploy.ps1
+carbon_calculator.service
+gunicorn_config.py
+.dockerignore 

@@ -1,0 +1,21 @@
+QMAKE_CXX.QT_COMPILER_STDCXX = 201402L
+QMAKE_CXX.QMAKE_GCC_MAJOR_VERSION = 8
+QMAKE_CXX.QMAKE_GCC_MINOR_VERSION = 1
+QMAKE_CXX.QMAKE_GCC_PATCH_VERSION = 0
+QMAKE_CXX.COMPILER_MACROS = \
+    QT_COMPILER_STDCXX \
+    QMAKE_GCC_MAJOR_VERSION \
+    QMAKE_GCC_MINOR_VERSION \
+    QMAKE_GCC_PATCH_VERSION
+QMAKE_CXX.INCDIRS = \
+    "E:/APP/VS Code/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++" \
+    "E:/APP/VS Code/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32" \
+    "E:/APP/VS Code/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward" \
+    "E:/APP/VS Code/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include" \
+    "E:/APP/VS Code/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed" \
+    "E:/APP/VS Code/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include"
+QMAKE_CXX.LIBDIRS = \
+    "E:/APP/VS Code/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0" \
+    "E:/APP/VS Code/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc" \
+    "E:/APP/VS Code/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/lib" \
+    "E:/APP/VS Code/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib"
